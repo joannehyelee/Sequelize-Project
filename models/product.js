@@ -1,5 +1,5 @@
 module.exports = function (sequelize, DataTypes) {
-    const videoGame = sequelize.define("videGame", {
+    const videoGame = sequelize.define("videoGame", {
         productName: {
             type: DataTypes.STRING,
             allowNull: false,
