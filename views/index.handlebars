@@ -1,0 +1,149 @@
+<body style="font-size:80%;">
+
+	<nav class="navbar navbar-light bg-dark justify-content-between">
+	  <a class="navbar-brand text-white">Games</a>
+	  <form class="form-inline">
+	    <button class="btn btn-primary my-2 my-sm-0" type="submit">Login</button>
+	  </form>
+	</nav>
+
+	<div class="container" style="padding: 2em 0;">
+		<div class="row justify-content-md-center">
+			<div class="col-sm-12 col-12">
+				<!-- Button trigger modal -->
+				<button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#addProductModal" style="float:right; margin-bottom: 10px;">Add New Product</button>
+				<table class="table table-bordered">
+				  <thead class="thead-light">
+				    <tr>
+				      <th scope="col">ID</th>
+				      <th scope="col">Image</th>
+				      <th scope="col">Product code</th>
+				      <th scope="col">Description</th>
+				      <th scope="col">Price</th>
+				      <th scope="col">Quantity</th>
+				      <th scope="col">Action</th>
+				    </tr>
+				  </thead>
+				  <tbody>
+				    <tr>
+				        <th scope="row">1</th>
+				        <td><img src="https://www.gamestop.com/common/images/lbox/141784b.jpg" width="70"></td>
+				        <td>03213741</td>
+				        <td>Mario Kart 8 Deluxe</td>
+				        <td>$59.99</td>
+				        <td>50</td>
+				        <td><button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editProductModal">Edit</button> <button type="button" class="btn btn-danger btn-sm">Delete</button></td>
+				    </tr>
+				    <tr>
+				        <th scope="row">2</th>
+				        <td><img src="https://www.gamestop.com/common/images/lbox/161435b.jpg" width="70"></td>
+				        <td>03213432</td>
+				        <td>Kirby Star Allies</td>
+				        <td>$59.99</td>
+				        <td>34</td>
+				        <td><button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editProductModal">Edit</button> <button type="button" class="btn btn-danger btn-sm">Delete</button></td>
+				    </tr>
+				  </tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+
+	<!-- Add Product Modal -->
+	<div class="modal fade" id="addProductModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+	  <div class="modal-dialog modal-dialog-centered" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h5 class="modal-title" id="exampleModalLongTitle">Add New Product</h5>
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          <span aria-hidden="true">&times;</span>
+	        </button>
+	      </div>
+	      <div class="modal-body">
+			<form>
+			  <div class="form-row" style="padding-bottom:1em;">
+			    <div class="col-md-12">
+			      <label for="validationDefault01">Product code</label>
+			      <input type="text" class="form-control" id="validationDefault01" required>
+			    </div>
+			  </div>
+			  <div class="form-row" style="padding-bottom:1em;">
+			    <div class="col-md-12">
+			      <label for="validationDefault01">Description</label>
+			      <input type="text" class="form-control" id="validationDefault01" required>
+			    </div>
+			  </div>
+			  <div class="custom-file" style="padding-bottom:1em;">
+				  <input type="file" class="custom-file-input" id="customFile">
+				  <label class="custom-file-label" for="customFile">Choose file</label>
+			</div>
+
+
+			  <div class="form-row" style="margin-top:1em;">
+			    <div class="col-md-6 mb-3">
+			      <label for="validationDefault03">Price</label>
+			      <input type="number" class="form-control" id="validationDefault03">
+			    </div>
+			    <div class="col-md-6 mb-3">
+			      <label for="validationDefault04">Quantity</label>
+			      <input type="number" class="form-control" id="validationDefault04">
+			    </div>
+			  </div>
+			</form>
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-primary">Submit</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+	<!-- Edit Product Modal -->
+	<div class="modal fade" id="editProductModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+	  <div class="modal-dialog modal-dialog-centered" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h5 class="modal-title" id="exampleModalLongTitle" data-toggle="modal" data-target="#editProductModal">Edit Product</h5>
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          <span aria-hidden="true">&times;</span>
+	        </button>
+	      </div>
+	      <div class="modal-body">
+			<form>
+			  <div class="form-row" style="padding-bottom:1em;">
+			    <div class="col-md-12">
+			      <label for="validationDefault01">Product code</label>
+			      <input type="text" class="form-control" id="validationDefault01" required>
+			    </div>
+			  </div>
+			  <div class="form-row" style="padding-bottom:1em;">
+			    <div class="col-md-12">
+			      <label for="validationDefault01">Description</label>
+			      <input type="text" class="form-control" id="validationDefault01" required>
+			    </div>
+			  </div>
+			  <div class="custom-file" style="padding-bottom:1em;">
+				  <input type="file" class="custom-file-input" id="customFile">
+				  <label class="custom-file-label" for="customFile">Choose file</label>
+			</div>
+
+
+			  <div class="form-row" style="margin-top:1em;">
+			    <div class="col-md-6 mb-3">
+			      <label for="validationDefault03">Price</label>
+			      <input type="number" class="form-control" id="validationDefault03">
+			    </div>
+			    <div class="col-md-6 mb-3">
+			      <label for="validationDefault04">Quantity</label>
+			      <input type="number" class="form-control" id="validationDefault04">
+			    </div>
+			  </div>
+			</form>
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-primary">Submit</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+</body>
