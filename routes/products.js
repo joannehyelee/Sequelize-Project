@@ -1,6 +1,3 @@
-// A SET OF ROUTES FOR DISPLAYING & SAVING DATA TO THE DB
-// =======================================================
-
 var express = require('express');
 var router  = express.Router();
 
