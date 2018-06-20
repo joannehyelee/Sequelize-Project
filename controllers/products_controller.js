@@ -1,16 +1,15 @@
-// var db = require('../models');
+var db = require('../models');
 
 exports.index = function(req, res) {
-    res.render('products/products');
 
     // GET route for getting all of the products
-    // db.Product.findAll({})
-    //     .then(function(dbProduct) {
-    //         console.log(dbProduct);
-    //         res.render('products/products', {
-
-    //         });
-    //     });
+    db.Game.findAll({})
+        .then(function(Games) {
+            //console.log(Games);
+            res.render('products/products', {
+                games: Games
+            });
+        });
 
 };
 
