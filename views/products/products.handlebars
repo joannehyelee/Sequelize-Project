@@ -11,6 +11,7 @@
 			      <th scope="col">ID</th>
 			      <th scope="col">Image</th>
 			      <th scope="col">Product code</th>
+						<th scope="col">Name</th>
 			      <th scope="col">Description</th>
 			      <th scope="col">Price</th>
 			      <th scope="col">Quantity</th>
@@ -18,24 +19,18 @@
 			    </tr>
 			  </thead>
 			  <tbody>
+					 {{#each games}}
 			    <tr>
-			        <th scope="row">1</th>
-			        <td><img src="https://www.gamestop.com/common/images/lbox/141784b.jpg" width="70"></td>
-			        <td>03213741</td>
-			        <td>Mario Kart 8 Deluxe</td>
-			        <td>$59.99</td>
-			        <td>50</td>
+			        <th scope="row">{{id}}</th>
+			        <td><img src="{{imageURL}}" width="70"></td>
+			        <td>{{productCode}}</td>
+							<td>{{name}}</td>
+			        <td>{{description}}</td>
+			        <td>{{price}}</td>
+			        <td>{{quantity}}</td>
 			        <td><button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editProductModal">Edit</button> <button type="button" class="btn btn-danger btn-sm">Delete</button></td>
 			    </tr>
-			    <tr>
-			        <th scope="row">2</th>
-			        <td><img src="https://www.gamestop.com/common/images/lbox/161435b.jpg" width="70"></td>
-			        <td>03213432</td>
-			        <td>Kirby Star Allies</td>
-			        <td>$59.99</td>
-			        <td>34</td>
-			        <td><button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editProductModal">Edit</button> <button type="button" class="btn btn-danger btn-sm">Delete</button></td>
-			    </tr>
+					{{/each}}
 			  </tbody>
 			</table>
 		</div>
