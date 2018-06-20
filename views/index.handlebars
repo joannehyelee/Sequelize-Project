@@ -4,54 +4,20 @@
 	
 	<div class="container" style="padding-top:3em;">
 		<div class="row">
+        {{#each games}}
         <div class="col-lg-3 col-md-4 col-sm-6">
           <div class="card h-100">
-            <a href="#" class="text-center" style="padding-top:20px;"><img src="https://www.gamestop.com/common/images/lbox/141784b.jpg" alt="" width="70%"></a>
+            <a href="#" class="text-center" style="padding-top:20px;"><img src="{{imageURL}}" alt="" height="200px"></a>
             <div class="card-body">
               <h6 class="card-title">
-                <a href="#">Mario Kart 8 Deluxe</a>
+                <a href="#">{{name}}</a>
               </h6>
-              <p class="card-text">$59.99</p>
+              <p class="card-text">${{price}}</p>
 							<button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#addProductModal" style="width:100%;">Add to Cart</button>
             </div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
-          <div class="card h-100">
-            <a href="#" class="text-center" style="padding-top:20px;"><img src="https://www.gamestop.com/common/images/lbox/141784b.jpg" alt="" width="70%"></a>
-            <div class="card-body">
-              <h6 class="card-title">
-                <a href="#">Mario Kart 8 Deluxe</a>
-              </h6>
-              <p class="card-text">$59.99</p>
-							<button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#addProductModal" style="width:100%;">Add to Cart</button>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
-          <div class="card h-100">
-            <a href="#" class="text-center" style="padding-top:20px;"><img src="https://www.gamestop.com/common/images/lbox/161435b.jpg" alt="" width="70%"></a>
-            <div class="card-body">
-              <h6 class="card-title">
-                <a href="#">Kirby Star Allies</a>
-              </h6>
-              <p class="card-text">$59.99</p>
-							<button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#addProductModal" style="width:100%;">Add to Cart</button>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">
-          <div class="card h-100">
-            <a href="#" class="text-center" style="padding-top:20px;"><img src="https://www.gamestop.com/common/images/lbox/141784b.jpg" alt="" width="70%"></a>
-            <div class="card-body">
-              <h6 class="card-title">
-                <a href="#">Mario Kart 8 Deluxe</a>
-              </h6>
-              <p class="card-text">$59.99</p>
-							<button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#addProductModal" style="width:100%;">Add to Cart</button>
-            </div>
-          </div>
-        </div>
+        {{/each}}
       </div>
 	</div>
 
