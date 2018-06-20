@@ -8,6 +8,8 @@ var express = require("express");
 var path = require("path");
 var bodyParser = require("body-parser");
 var exphbs = require("express-handlebars");
+var passport = require("passport");
+var session = require("express-session");
 
 // EXPRESS CONFIGURATION
 // ===================================================
@@ -23,6 +25,11 @@ app.set('view engine', 'handlebars');
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+
+// Passport
+app.use(session({ secret: 'keyboard cat',resave: true, saveUninitialized:true }));
+app.use(passport.initialize());
+app.use(passport.session());
 
 // Require models for syncing
 var db = require("./models");
