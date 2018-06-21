@@ -1,12 +1,5 @@
 {{> nav }}
 
-  {{!-- {{#each games }}
-  <p>
-    {{ name }}
-		{{ description }}
-  </p>
-  {{/each}} --}}
-
 <div class="container" style="padding: 2em 0;">
 	<div class="row justify-content-md-center">
 		<div class="col-sm-12 col-12">
@@ -33,7 +26,7 @@
 			        <td>{{ description }}</td>
 			        <td>${{ price }}</td>
 			        <td>{{ quantity }}</td>
-			        <td><button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editProductModal">Edit</button> <button type="button" class="btn btn-danger btn-sm">Delete</button></td>
+			        <td><button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editProductModal">Edit</button> <button type="button" class="btn btn-danger btn-sm deleteProductBtn">Delete</button></td>
 			    </tr>
 					{{/each}}
 			    {{!-- <tr>

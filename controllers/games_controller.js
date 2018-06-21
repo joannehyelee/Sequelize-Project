@@ -28,6 +28,7 @@ exports.deleteProduct = function(req, res) {
             id: req.params.id
         }
     }).then(function(dbGame) {
+        console.log(dbGame);
         res.json(dbGame);
     });
 

@@ -22,6 +22,18 @@ $(document).ready(function(){
         createGame(gameData.name, gameData.description, gameData.imageURL, gameData.price, gameData.quantity);
     });
 
+    $(".deleteProductBtn").on("click", function(event){
+        var id = $(this).parent("td").parent("tr").children("th").html();
+        console.log(id);
+
+        $.ajax({
+            method: "DELETE",
+            url: "/games/" + id
+        }).then(function(){
+            window.location.href = "/games";
+        });
+    });
+
     function createGame(name, description, imageURL, price, quantity) {
         $.post("/games/new", {
             name: name,
@@ -34,5 +46,6 @@ $(document).ready(function(){
             window.location.href = "/games";
         });
     }
+
 
 });
