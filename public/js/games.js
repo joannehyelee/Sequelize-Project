@@ -9,7 +9,7 @@ $(document).ready(function(){
     $("#addProductBtn").on("click", function(event){
         event.preventDefault();
 
-        console.log(event.target.files[0]);
+        // console.log(event.target.files[0]);
         
         var gameData = {
             name: productCode.val().trim(),
@@ -31,6 +31,7 @@ $(document).ready(function(){
             quantity: quantity
         }).then(function(data) {
             console.log(data);
+            window.location.href = "/games";
         });
     }
 

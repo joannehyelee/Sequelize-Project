@@ -9,4 +9,7 @@ router.get('/', games_controller.index);
 router.post('/new', games_controller.createProduct);
 // localhost:8000/games/new
 
+router.delete('/:id', games_controller.deleteProduct);
+// localhost:8000/games/:id
+
 module.exports = router;
