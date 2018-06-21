@@ -1,6 +1,14 @@
 <body style="font-size:80%;">
 
 	{{> nav }}
+
+  {{!-- {{#if user }} --}}
+  {{#each user }}
+  <p>
+    {{ username }}
+  </p>
+  {{/each}}
+  {{!-- {{/if}} --}}
 	
 	<div class="container" style="padding-top:3em;">
 		<div class="row">

@@ -1,4 +1,4 @@
-// var db = require('../models');
+var db = require('../models');
 
 exports.index = function(req, res) {
     res.render('users/login');
@@ -6,7 +6,8 @@ exports.index = function(req, res) {
 
 // Register a user
 exports.signUp = function(req, res) {
-    db.User.findAll({
-        
-    })
+    db.User.create(req.body).then(function(dbUser){
+        res.json(dbUser);
+        console.log(dbUser);
+      });
 };

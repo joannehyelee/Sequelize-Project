@@ -5,16 +5,26 @@ $(document).ready(function(){
     var emailInput = $("#inputEmail");
     var passwordInput = $("#inputPassword");
 
-    $("#signup").on("click", function(event) {
-
+    $("#signup").on("click", function(event){
+        event.preventDefault();
+        
         var userData = {
-            name: nameInput.val().trim(),
+            username: nameInput.val().trim(),
             email: emailInput.val().trim(),
             password: passwordInput.val().trim()
         };
 
-        signUpUser(userData.name, userData.email, userData.password);
-
+        signUpUser(userData.username, userData.email, userData.password);
     });
+
+    function signUpUser(username, email, password) {
+        $.post("/users/signup", {
+            username: username,
+            email: email,
+            password: password
+        }).then(function(data) {
+            console.log(data);
+        });
+    }
 
 });

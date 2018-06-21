@@ -10,7 +10,6 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: true,
     },
-
     price: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -22,8 +21,7 @@ module.exports = function (sequelize, DataTypes) {
     imageURL: {
       type: DataTypes.STRING,
       allowNull: false,
-    },
-
+    }
   });
   // Game.associate = function (models) {
   //   // associations can be defined here

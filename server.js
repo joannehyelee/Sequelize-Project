@@ -10,6 +10,7 @@ var bodyParser = require("body-parser");
 var exphbs = require("express-handlebars");
 var passport = require("passport");
 var session = require("express-session");
+var multer = require("multer");
 
 // EXPRESS CONFIGURATION
 // ===================================================
@@ -30,6 +31,27 @@ app.use(bodyParser.json());
 app.use(session({ secret: 'keyboard cat',resave: true, saveUninitialized:true }));
 app.use(passport.initialize());
 app.use(passport.session());
+
+var upload = multer({ dest: '/tmp/'});
+
+// File input field name is simply 'file'
+app.post('/file_upload', upload.single('file'), function(req, res) {
+  console.log("!!!!!!!!!!",req.file);
+  console.log("=====>",req.files);
+
+  var file = __dirname + '/' + req.file.filename;
+  fs.rename(req.file.path, file, function(err) {
+    if (err) {
+      console.log(err);
+      res.send(500);
+    } else {
+      res.json({
+        message: 'File uploaded successfully',
+        filename: req.file.filename
+      });
+    }
+  });
+});
 
 // Require models for syncing
 var db = require("./models");
