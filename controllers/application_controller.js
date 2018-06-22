@@ -1,3 +1,12 @@
+var db = require('../models');
+
 exports.index = function(req, res) {
-    res.render('index');
+    // GET route for getting all of the products
+    db.Game.findAll({})
+        .then(function(dbProduct) {
+            // console.log(dbProduct);
+            res.render('index', {
+                games: dbProduct
+            });
+        });
 };

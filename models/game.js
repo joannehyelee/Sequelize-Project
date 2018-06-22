@@ -2,7 +2,7 @@
 
 module.exports = function (sequelize, DataTypes) {
   const Game = sequelize.define('Game', {
-    name: {
+    code: {
       type: DataTypes.STRING,
       allowNull: true,
     },
@@ -11,7 +11,7 @@ module.exports = function (sequelize, DataTypes) {
       allowNull: true,
     },
     price: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.DECIMAL(10,2),
       allowNull: false,
     },
     quantity: {
