@@ -26,18 +26,9 @@
 			        <td>{{ description }}</td>
 			        <td>${{ price }}</td>
 			        <td>{{ quantity }}</td>
-			        <td><button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editProductModal">Edit</button> <button type="button" class="btn btn-danger btn-sm deleteProductBtn">Delete</button></td>
+			        <td><button type="button" class="btn btn-primary btn-sm editProductBtn" data-toggle="modal" data-target="#editProductModal">Edit</button> <button type="button" class="btn btn-danger btn-sm deleteProductBtn">Delete</button></td>
 			    </tr>
 					{{/each}}
-			    {{!-- <tr>
-			        <th scope="row">2</th>
-			        <td><img src="https://www.gamestop.com/common/images/lbox/161435b.jpg" width="70"></td>
-			        <td>03213432</td>
-			        <td>Kirby Star Allies</td>
-			        <td>$59.99</td>
-			        <td>34</td>
-			        <td><button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editProductModal">Edit</button> <button type="button" class="btn btn-danger btn-sm">Delete</button></td>
-			    </tr> --}}
 			  </tbody>
 			</table>
 		</div>
@@ -57,28 +48,28 @@
 		<form method="put" encType="multipart/form-data">
 		  <div class="form-row" style="padding-bottom:1em;">
 		    <div class="col-md-12">
-		      <label for="inputProductCode">Product code</label>
-		      <input type="text" class="form-control" id="inputProductCode" required>
+		      <label for="addinputProductCode">Product code</label>
+		      <input type="text" class="form-control inputProductCode" id="addinputProductCode" required>
 		    </div>
 		  </div>
 		  <div class="form-row" style="padding-bottom:1em;">
 		    <div class="col-md-12">
-		      <label for="inputDescription">Description</label>
-		      <input type="text" class="form-control" id="inputDescription" required>
+		      <label for="addinputDescription">Description</label>
+		      <input type="text" class="form-control inputDescription" id="addinputDescription" required>
 		    </div>
 		  </div>
 		  <div class="custom-file" style="padding-bottom:1em;">
-			  <input type="file" class="custom-file-input" id="inputFile">
-			  <label class="custom-file-label" for="inputFile">Choose file</label>
+			  <input type="file" class="custom-file-input inputFile" id="addinputFile">
+			  <label class="custom-file-label" for="addinputFile">Choose file</label>
 		</div>
 		  <div class="form-row" style="margin-top:1em;">
 		    <div class="col-md-6 mb-3">
-		      <label for="inputPrice">Price</label>
-		      <input type="number" class="form-control" id="inputPrice">
+		      <label for="addinputPrice">Price</label>
+		      <input type="number" class="form-control inputPrice" id="addinputPrice">
 		    </div>
 		    <div class="col-md-6 mb-3">
-		      <label for="inputQuantity">Quantity</label>
-		      <input type="number" class="form-control" id="inputQuantity">
+		      <label for="addinputQuantity">Quantity</label>
+		      <input type="number" class="form-control inputQuantity" id="addinputQuantity">
 		    </div>
 		  </div>
 		</form>
@@ -100,37 +91,37 @@
         </button>
       </div>
       <div class="modal-body">
-		<form>
+		<form method="put" encType="multipart/form-data">
 		  <div class="form-row" style="padding-bottom:1em;">
 		    <div class="col-md-12">
-		      <label for="validationDefault01">Product code</label>
-		      <input type="text" class="form-control" id="validationDefault01" required>
+		      <label for="editinputProductCode">Product code</label>
+		      <input type="text" class="form-control inputProductCode" id="editinputProductCode" required>
 		    </div>
 		  </div>
 		  <div class="form-row" style="padding-bottom:1em;">
 		    <div class="col-md-12">
-		      <label for="validationDefault01">Description</label>
-		      <input type="text" class="form-control" id="validationDefault01" required>
+		      <label for="editinputDescription">Description</label>
+		      <input type="text" class="form-control inputDescription" id="editinputDescription" required>
 		    </div>
 		  </div>
 		  <div class="custom-file" style="padding-bottom:1em;">
-			  <input type="file" class="custom-file-input" id="customFile">
-			  <label class="custom-file-label" for="customFile">Choose file</label>
+			  <input type="file" class="custom-file-input inputFile" id="editinputFile">
+			  <label class="custom-file-label" for="editinputFile">Choose file</label>
 		</div>
 		  <div class="form-row" style="margin-top:1em;">
 		    <div class="col-md-6 mb-3">
-		      <label for="validationDefault03">Price</label>
-		      <input type="number" class="form-control" id="validationDefault03">
+		      <label for="editinputPrice">Price</label>
+		      <input type="number" class="form-control inputPrice" id="editinputPrice">
 		    </div>
 		    <div class="col-md-6 mb-3">
-		      <label for="validationDefault04">Quantity</label>
-		      <input type="number" class="form-control" id="validationDefault04">
+		      <label for="editinputQuantity">Quantity</label>
+		      <input type="number" class="form-control inputQuantity" id="editinputQuantity">
 		    </div>
 		  </div>
 		</form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Submit</button>
+        <button type="button" class="btn btn-primary" id="updateProductBtn">Submit</button>
       </div>
     </div>
   </div>

@@ -15,14 +15,27 @@ exports.createProduct = function(req, res) {
     // console.log("!!!!!!!", req.file);
     // console.log("!!!!!!!", req.files);
 
+    // POST route for creating a product
     db.Game.create(req.body).then(function(dbGame){
         res.json(dbGame);
         // console.log(dbGame);
     });
 };
 
-exports.deleteProduct = function(req, res) {
+exports.getProduct = function(req, res) {
+    // GET route for getting a single product
+    db.Game.findOne({
+        where: {
+            id: req.params.id
+        }
+    }).then(function(dbGame) {
+        console.log(dbGame);
+        res.json(dbGame);
+    });
+};
 
+exports.deleteProduct = function(req, res) {
+    // DELETE route for deleting products
     db.Game.destroy({
         where: {
             id: req.params.id
@@ -31,5 +44,16 @@ exports.deleteProduct = function(req, res) {
         console.log(dbGame);
         res.json(dbGame);
     });
+};
 
+exports.updateProduct = function(req, res) {
+    // PUT route for updating products
+    db.Game.update(req.body,
+    {
+        where: {
+            id: req.body.id
+        }
+    }).then(function(dbGame) {
+        res.json(dbGame);
+    });
 };
