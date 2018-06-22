@@ -23,7 +23,9 @@ $(document).ready(function(){
             email: email,
             password: password
         }).then(function(data) {
-            console.log(data);
+            if(data.success){
+                window.location = "/";
+            }
         });
     }
 

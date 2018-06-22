@@ -1,5 +1,15 @@
 <nav class="navbar navbar-light bg-dark justify-content-between">
     <a href="/" class="navbar-brand text-white">Switch</a>
-    <a href="/users/login" style="margin-left: auto; padding-right: 10px;"><button class="btn btn-primary my-2 my-sm-0">Sign In</button></a>
-    <a href="/cart"><button class="btn btn-danger my-2 my-sm-0">Cart</button></a>
+    
+    {{#if currentUser}}
+     <div class ="userName"> {{currentUser.username}} </div> {{/if}}
+    {{#if currentUser}}
+    <a href="/users/logout" style="margin-left: auto; padding-right: 10px;">
+        <button class="btn btn-primary my-2 my-sm-0">Sign out</button>
+    </a>
+    {{else}}
+    <a href="/users/login" style="margin-left: auto; padding-right: 10px;">
+        <button class="btn btn-primary my-2 my-sm-0">Sign in</button>
+    </a>
+    {{/if}} 
 </nav>

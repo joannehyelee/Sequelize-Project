@@ -9,6 +9,7 @@ var path = require("path");
 var bodyParser = require("body-parser");
 var exphbs = require("express-handlebars");
 var passport = require("passport");
+var LocalStrategy = require('passport-local').Strategy;
 var session = require("express-session");
 var multer = require("multer");
 
@@ -55,6 +56,42 @@ app.post('/file_upload', upload.single('file'), function(req, res) {
 
 // Require models for syncing
 var db = require("./models");
+
+passport.use(new LocalStrategy(
+  function (username, password, done) {
+    db.User.findOne({ where: { username: username } }).then(function (user) {
+      if (!user) {
+        return done(null, false, { message: 'Incorrect username.' });
+      }
+      if (!user.validPassword(password)) {
+        return done(null, false, { message: 'Incorrect password.' });
+      }
+      return done(null, user);
+    });
+  }
+));
+
+passport.serializeUser(function (user, done) {
+  done(null, user.id);
+});
+
+passport.deserializeUser(function (id, done) {
+  db.User.findById(id).then(function (user) {
+    done( null, user);
+  });
+});
+
+app.post('/users/login',
+  passport.authenticate('local', {
+    successRedirect: '/',
+    failureRedirect: '/users/login'
+  })
+);
+
+app.get('/users/logout', function (req, res) {
+  req.logout();
+  res.redirect('/');
+});
 
 // ROUTER
 // ===================================================

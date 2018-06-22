@@ -8,7 +8,7 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len: [6],
+        len: [1,30],
       },
     },
     email: {
@@ -22,6 +22,9 @@ module.exports = function (sequelize, DataTypes) {
     password: {
       type: DataTypes.STRING,
       allowNull: false,
+      validate: {
+        len: [5, 20],
+      },
     },
   }, {
     // Hooks are automatic methods that run during various phases of the User Model lifecycle
