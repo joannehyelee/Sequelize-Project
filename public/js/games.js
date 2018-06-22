@@ -16,14 +16,14 @@ $(document).ready(function(){
         // console.log(event.target.files[0]);
         
         var gameData = {
-            name: addproductCode.val().trim(),
+            code: addproductCode.val().trim(),
             description: adddescription.val().trim(),
             imageURL: addimageURL.val().trim(),
             price: addprice.val().trim(),
             quantity: addquantity.val().trim()
         };
 
-        createGame(gameData.name, gameData.description, gameData.imageURL, gameData.price, gameData.quantity);
+        createGame(gameData.code, gameData.description, gameData.imageURL, gameData.price, gameData.quantity);
     });
 
     $(".deleteProductBtn").on("click", function(event){
@@ -43,7 +43,7 @@ $(document).ready(function(){
 
         $.get("/games/" + id, function(data) {
             if (data) {
-                editproductCode.val(data.name);
+                editproductCode.val(data.code);
                 editdescription.val(data.description);
                 // imageURL.val(data.imageURL);
                 editprice.val(data.price);
@@ -53,7 +53,7 @@ $(document).ready(function(){
             $("#updateProductBtn").on("click", function(event){
                 // console.log(event);
                 var gameData = {
-                    name: editproductCode.val().trim(),
+                    code: editproductCode.val().trim(),
                     description: editdescription.val().trim(),
                     imageURL: editimageURL.val().trim(),
                     price: editprice.val().trim(),
@@ -66,9 +66,9 @@ $(document).ready(function(){
         });
     });
 
-    function createGame(name, description, imageURL, price, quantity) {
+    function createGame(code, description, imageURL, price, quantity) {
         $.post("/games/new", {
-            name: name,
+            code: code,
             description: description,
             imageURL: imageURL,
             price: price,
