@@ -17,11 +17,11 @@ module.exports = function (sequelize, DataTypes) {
     quantity: {
       type: DataTypes.INTEGER,
       allowNull: false,
-    },
-    imageURL: {
-      type: DataTypes.STRING,
-      allowNull: false,
     }
+    // imageURL: {
+    //   type: DataTypes.STRING,
+    //   allowNull: false,
+    // }
   });
   // Game.associate = function (models) {
   //   // associations can be defined here

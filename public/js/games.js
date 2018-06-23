@@ -2,12 +2,12 @@ $(document).ready(function(){
 
     var addproductCode = $("#addinputProductCode");
     var adddescription = $("#addinputDescription");
-    var addimageURL = $("#addinputFile");
+    // var addimageURL = $("#addinputFile");
     var addprice = $("#addinputPrice");
     var addquantity = $("#addinputQuantity");
     var editproductCode = $("#editinputProductCode");
     var editdescription = $("#editinputDescription");
-    var editimageURL = $("#editinputFile");
+    // var editimageURL = $("#editinputFile");
     var editprice = $("#editinputPrice");
     var editquantity = $("#editinputQuantity");
 
@@ -16,12 +16,12 @@ $(document).ready(function(){
         var gameData = {
             code: addproductCode.val().trim(),
             description: adddescription.val().trim(),
-            imageURL: addimageURL.val().trim(),
+            // imageURL: addimageURL.val().trim(),
             price: addprice.val().trim(),
             quantity: addquantity.val().trim()
         };
 
-        createGame(gameData.code, gameData.description, gameData.imageURL, gameData.price, gameData.quantity);
+        createGame(gameData.code, gameData.description, gameData.price, gameData.quantity);
     });
 
     $(".deleteProductBtn").on("click", function(event){
@@ -53,7 +53,7 @@ $(document).ready(function(){
                 var gameData = {
                     code: editproductCode.val().trim(),
                     description: editdescription.val().trim(),
-                    imageURL: editimageURL.val().trim(),
+                    // imageURL: editimageURL.val().trim(),
                     price: editprice.val().trim(),
                     quantity: editquantity.val().trim()
                 };
@@ -64,11 +64,11 @@ $(document).ready(function(){
         });
     });
 
-    function createGame(code, description, imageURL, price, quantity) {
+    function createGame(code, description, price, quantity) {
         $.post("/games/new", {
             code: code,
             description: description,
-            imageURL: imageURL,
+            // imageURL: imageURL,
             price: price,
             quantity: quantity
         }).then(function(data) {

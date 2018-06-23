@@ -21,7 +21,7 @@
 					{{#each games }}
 			    <tr>
 			        <th scope="row">{{ id }}</th>
-			        <td><img src="{{ imageURL }}"></td>
+			        <td><img src="img/{{ id }}.jpg" style="height:200px;"></td>
 			        <td>{{ code }}</td>
 			        <td>{{ description }}</td>
 			        <td>${{ price }}</td>
@@ -58,10 +58,10 @@
 		      <input type="text" class="form-control inputDescription" id="addinputDescription" required>
 		    </div>
 		  </div>
-		  <div class="custom-file" style="padding-bottom:1em;">
+		  {{!-- <div class="custom-file" style="padding-bottom:1em;">
 			  <input type="file" name="imageURL" class="custom-file-input inputFile" id="addinputFile">
 			  <label class="custom-file-label" for="addinputFile">Choose file</label>
-		</div>
+			</div> --}}
 		  <div class="form-row" style="margin-top:1em;">
 		    <div class="col-md-6 mb-3">
 		      <label for="addinputPrice">Price</label>
@@ -104,10 +104,10 @@
 		      <input type="text" class="form-control inputDescription" id="editinputDescription" required>
 		    </div>
 		  </div>
-		  <div class="custom-file" style="padding-bottom:1em;">
+		  {{!-- <div class="custom-file" style="padding-bottom:1em;">
 			  <input type="file" class="custom-file-input inputFile" id="editinputFile">
 			  <label class="custom-file-label" for="editinputFile">Choose file</label>
-		</div>
+			</div> --}}
 		  <div class="form-row" style="margin-top:1em;">
 		    <div class="col-md-6 mb-3">
 		      <label for="editinputPrice">Price</label>
