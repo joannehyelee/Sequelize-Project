@@ -1,8 +1,11 @@
+const Bar = sequelize.define('bar', { /* bla */ }, {
+  // don't add the timestamp attributes (updatedAt, createdAt)
+  timestamps: false,
 
 
-const bcrypt = require('bcrypt-nodejs');
+const: bcrypt = require('bcrypt-nodejs');
 
-module.exports = function (sequelize, DataTypes) {
+module:exports = function (sequelize, DataTypes) {
   const User = sequelize.define('User', {
     username: {
       type: DataTypes.STRING,
