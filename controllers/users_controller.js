@@ -7,7 +7,8 @@ exports.index = function(req, res) {
 // Register a user
 exports.signUp = function(req, res) {
     db.User.create(req.body).then(function(dbUser){
-        res.json(dbUser);
-        console.log(dbUser);
-      });
+        res.json({success : true});
+    }).catch(function(err){
+        res.json({ success: false, error : err });
+    });
 };

@@ -6,7 +6,8 @@ exports.index = function(req, res) {
         .then(function(dbProduct) {
             // console.log(dbProduct);
             res.render('index', {
-                games: dbProduct
+                games: dbProduct,
+                currentUser: req.user
             });
         });
 };
