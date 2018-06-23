@@ -12,6 +12,11 @@ exports.index = function(req, res) {
 };
 
 exports.createProduct = function(req, res) {
+
+    upload(req, res, function(err) {
+        console.log('!!!!!!!!!!!!!!!!!!!!', req.body);
+        console.log("!!!!!!!!!!!!!", req.files);
+    });
     // console.log("!!!!!!!", req.file);
     // console.log("!!!!!!!", req.files);
 

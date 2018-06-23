@@ -45,7 +45,7 @@
         </button>
       </div>
       <div class="modal-body">
-		<form method="put" encType="multipart/form-data">
+		<form id="uploadForm" enctype="multipart/form-data" action="/games/new" method="POST">
 		  <div class="form-row" style="padding-bottom:1em;">
 		    <div class="col-md-12">
 		      <label for="addinputProductCode">Product code</label>
@@ -59,7 +59,7 @@
 		    </div>
 		  </div>
 		  <div class="custom-file" style="padding-bottom:1em;">
-			  <input type="file" class="custom-file-input inputFile" id="addinputFile">
+			  <input type="file" name="imageURL" class="custom-file-input inputFile" id="addinputFile">
 			  <label class="custom-file-label" for="addinputFile">Choose file</label>
 		</div>
 		  <div class="form-row" style="margin-top:1em;">

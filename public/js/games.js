@@ -12,8 +12,6 @@ $(document).ready(function(){
     var editquantity = $("#editinputQuantity");
 
     $("#addProductBtn").on("click", function(event){
-        event.preventDefault();
-        // console.log(event.target.files[0]);
         
         var gameData = {
             code: addproductCode.val().trim(),
